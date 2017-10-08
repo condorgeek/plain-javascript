@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+  <link href="./css/font-awesome.css" type="text/css" rel="stylesheet">
+  <link href="./index.css" type="text/css" rel="stylesheet">
+
+<head>
+<title>Simple Menu</title>
+
+</head>
+<body>
+<ul class="menu" onmouseout="hideall()">
+ <i class="fa fa-youtube fa-2x" style="display:inline-block; border: 1px solid blue;" aria-hidden="true"></i>
+
+  <li  class="menu-item"  onmouseover="toggle('showid')" onmouseout="toggle('showid')"><span>Show</span>
+    <div id="showid" class="menu-item-tip">
+      <span class="tip-item" onclick="toggletext(event)">Toggle Text</span><hr>
+      <input class="tip-input" type="text" placeholder="Enter name" autofocus><hr>
+      <span class="tip-item" onclick="toggletext(event)">Toggle Second</span>
+    </div>
+    </li>
+
+  <li  class="menu-item" onmouseover="toggle('hideid')" onmouseout="toggle('hideid')">Hide
+  <div id="hideid" class="menu-item-tip">Hide text</div>
+  </li>
+
+  <li class="menu-item last-item" onmouseover="toggle('loginid')" onmouseout="toggle('searchid')">
+    <span><i class="fa fa-user" aria-hidden="true"></i>Login</span>
+    <div id="loginid" class="menu-item-tip-right">
+      <input class="tip-input" type="text" placeholder="Enter email" autofocus>
+      <input class="tip-input" type="text" placeholder="Enter password" autofocus>
+      <button class="tip-button" onclick="toggletext(event)"><i class="fa fa-sign-in" aria-hidden="true"></i>
+Login</button><hr>
+      <span class="tip-item" onclick="toggletext(event)"><i class="fa fa-address-card-o" aria-hidden="true"></i>
+Register</span><hr>
+      <span class="tip-item" onclick="toggletext(event)"><i class="fa fa-sign-out" aria-hidden="true"></i>
+Logout</span>
+
+        </div>
+  </li>
+
+  <li class="menu-item last-item" onmouseover="toggle('searchid')" onmouseout="toggle('searchid')">
+    <i class="fa fa-search" aria-hidden="true"></i>
+    <input class="search-input" placeholder="Search Videos" autofocus>
+    <div id="searchid" class="menu-item-tip">
+      <span class="tip-item" onclick="toggletext(event)">Toggle Second</span>
+    </div>
+  </li>
+
+</ul>
+
+<div class="text" id="container">
+    <div class="text loader"><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></div>
+</div>
+
+<!-- End your code here -->
+<script>
+(function ab(){
+var a, b = 3;
+  console.log("a=", a, "b=", b);
+})();
+
+console.log("Outside: ", a, b);
+  </script>
+    <script src="./app.js"></script>
+</body>
+</html>
