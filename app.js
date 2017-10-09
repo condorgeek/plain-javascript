@@ -1,6 +1,6 @@
 //"use strict";
 
-var menuids = ["hideid", "showid", "searchid", "loginid"];
+var menuids = ["hideid", "settingsid", "loginid"];
 
 function bigger(tag, classname) {
   var elems = document.getElementsByTagName(tag);
@@ -37,11 +37,15 @@ function toggle(id) {
     menuids.forEach(m => document.getElementById(m).style.display = "none");
   }
 
-function hideloader() {
-    let loaders = document.getElementsByClassName("loader");
+function hide(name, hide) {
+    let loaders = document.getElementsByClassName(name);
     for(var i = 0; i < loaders.length; i++) {
-        loaders[i].style.display = "none";
+        loaders[i].style.display = hide;;
     }
+  }
+
+function hideloader() {
+    hide("loader", "none");
   }
 
 function toggletext(event) {
@@ -92,12 +96,46 @@ function get(filename) {
     return promise.then( response => JSON.parse(response));
 }
 
-(function(){
-    get("./data.json").then(
+function search(event) {
+    if(event.key == "Enter" || event.keyCode == 13) {
+        let text = event.target.value;
+        console.log("Search by ", text);
+    }
+}
+function login(event) {
+  let email = document.getElementById("emailid").value;
+  let password = document.getElementById("passwordid").value;
+  hide("login-loader", "inline");
+  setTimeout(() => {
+    if(email.length > 0 && password.length > 0) {
+    document.getElementById("userid").innerHTML = email;
+    document.getElementById("emailid").value ="";
+    document.getElementById("passwordid").value ="";
+  }
+    hide("login-loader", "none");
+  }, 1000);
+
+}
+
+function logout() {
+  hide("logout-loader", "inline");
+  setTimeout(() => {
+    document.getElementById("userid").innerHTML = "Login";
+    hide("logout-loader", "none");
+  }, 1000);
+}
+
+function addtext(event) {
+  hide("loader", "inline");
+  get("./data.json").then(
         (result) => {
             console.log(result);
             hideloader();
             result.forEach( t => insertText(t.text));
         },
         (error) => console.log(error));
+}
+
+(function(){
+    addtext();
 })();

@@ -1,5 +1,6 @@
 body {
   font-family: 'PT Sans', sans-serif;
+    margin: 0px; paddin: 0px;
 }
 
 hr {
@@ -16,21 +17,30 @@ hr {
   background-color: #eee;
   padding:  2px;
   width: 100%;
+  min-width: 650px;
   height: 32px;
+  z-index: 1001;
 }
+
 .menu-item {
   position:  relative;
   display: inline-block;
   cursor:  pointer;
   padding:  6px 5px;
   height: 18px;
-    z-index: 1000;
+  z-index: 1000;
 }
+/*
 .menu-item > span {
   top: 10px;
 }
+*/
 .menu-item i {
   margin-right: 3px;
+}
+.menu-item-logo > i{
+    font-size: 18px;
+    cursor: none;
 }
  .menu-item-tip {
   position: absolute;
@@ -44,20 +54,22 @@ hr {
 }
 .menu-item-tip-right{
   position: absolute;
-  top: 32px;
+  top: 30px;
   right: 5px;
   border: 1px solid #ccc;
   width: 200px;
   background:  #eee;
   display: none;
   padding: 5px;
+  z-index: 900;
 }
 .last-item {
   float: right;
+  margin-right: 8px;
 }
 .search-input {
   margin-top: -10px;
-  width: 260px;
+  width: 280px;
   opacity: 0.7;
   font-size: 14px;
   height: 2.0em;
@@ -96,6 +108,7 @@ hr {
 }
 .text {
     position: relative;
+  padding: 0 8px;
     width: 100%;
 }
 .loader {
@@ -103,4 +116,12 @@ hr {
     top: 45px;
     left: 45%;
     color: gray;
+}
+.login-loader  {
+    color: gray;
+  display: none;
+}
+.logout-loader  {
+    color: gray;
+  display: none;
 }

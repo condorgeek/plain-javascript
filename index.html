@@ -9,12 +9,14 @@
 
 </head>
 <body>
+<!-- menu -->
 <ul class="menu" onmouseout="hideall()">
- <i class="fa fa-youtube fa-2x" style="display:inline-block; border: 1px solid blue;" aria-hidden="true"></i>
-
-  <li  class="menu-item"  onmouseover="toggle('showid')" onmouseout="toggle('showid')"><span>Show</span>
-    <div id="showid" class="menu-item-tip">
-      <span class="tip-item" onclick="toggletext(event)">Toggle Text</span><hr>
+    <li class="menu-item">
+        <span class="menu-item-logo"><i class="fa fa-youtube"></i>YouTube</span>
+  </li>
+  <li  class="menu-item"  onmouseover="toggle('settingsid')" onmouseout="toggle('settingsid')"><span>Settings</span>
+    <div id="settingsid" class="menu-item-tip">
+      <span class="tip-item" onclick="addtext(event)">More Text..</span><hr>
       <input class="tip-input" type="text" placeholder="Enter name" autofocus><hr>
       <span class="tip-item" onclick="toggletext(event)">Toggle Second</span>
     </div>
@@ -24,34 +26,30 @@
   <div id="hideid" class="menu-item-tip">Hide text</div>
   </li>
 
-  <li class="menu-item last-item" onmouseover="toggle('loginid')" onmouseout="toggle('searchid')">
-    <span><i class="fa fa-user" aria-hidden="true"></i>Login</span>
+  <li class="menu-item last-item" onmouseover="toggle('loginid')" onmouseout="toggle('loginid')">
+    <div><i class="fa fa-user" aria-hidden="true"></i><span id="userid">Login</span></div>
     <div id="loginid" class="menu-item-tip-right">
-      <input class="tip-input" type="text" placeholder="Enter email" autofocus>
-      <input class="tip-input" type="text" placeholder="Enter password" autofocus>
-      <button class="tip-button" onclick="toggletext(event)"><i class="fa fa-sign-in" aria-hidden="true"></i>
-Login</button><hr>
+      <input id="emailid" class="tip-input" type="text" placeholder="Enter email" autofocus>
+      <input id="passwordid" class="tip-input" type="password" placeholder="Enter password" autofocus>
+      <button class="tip-button" onclick="login(event)"><i class="fa fa-sign-in" aria-hidden="true" ></i>
+        Login<span class="login-loader"><i class="fa fa-spinner fa-spin fa-fw"></span></i></button><hr>
       <span class="tip-item" onclick="toggletext(event)"><i class="fa fa-address-card-o" aria-hidden="true"></i>
 Register</span><hr>
-      <span class="tip-item" onclick="toggletext(event)"><i class="fa fa-sign-out" aria-hidden="true"></i>
-Logout</span>
-
-        </div>
+      <div class="tip-item" onclick="logout(event)"><i class="fa fa-sign-out" aria-hidden="true"></i>
+        Logout <span class="logout-loader"><i class="fa fa-spinner fa-spin fa-fw"></i></span></div>
   </li>
 
-  <li class="menu-item last-item" onmouseover="toggle('searchid')" onmouseout="toggle('searchid')">
+  <li class="menu-item last-item">
     <i class="fa fa-search" aria-hidden="true"></i>
-    <input class="search-input" placeholder="Search Videos" autofocus>
-    <div id="searchid" class="menu-item-tip">
-      <span class="tip-item" onclick="toggletext(event)">Toggle Second</span>
-    </div>
+    <input class="search-input" placeholder="Search Videos" autofocus  onkeyup="search(event)">
   </li>
 
 </ul>
-
+<!-- text -->
 <div class="text" id="container">
     <div class="text loader"><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></div>
 </div>
+<!-- images -->
 
 <!-- End your code here -->
 <script>
