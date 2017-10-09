@@ -30,13 +30,25 @@ hr {
   height: 18px;
   z-index: 1000;
 }
-/*
-.menu-item > span {
-  top: 10px;
+.menu-title {
+  display: inline;
+  background-color: lightgray;
+  padding:  9px 5px;
+  height: 24px;
+  z-index: 1000;
 }
-*/
 .menu-item i {
   margin-right: 3px;
+  opacity: 0.6;
+}
+.menu-item:hover i {
+  opacity: 1.0;
+}
+.menu-item > span {
+  opacity: 0.6;
+}
+.menu-item:hover > span {
+  opacity: 1.0;
 }
 .menu-item-logo > i{
     font-size: 18px;
@@ -104,7 +116,7 @@ hr {
 }
 .menu-item:hover {
   background:  #eee;
-  text-decoration: underline;
+/*  text-decoration: underline;*/
 }
 .text {
     position: relative;

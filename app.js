@@ -125,7 +125,7 @@ function logout() {
   }, 1000);
 }
 
-function addtext(event) {
+function loadtext(event) {
   hide("loader", "inline");
   get("./data.json").then(
         (result) => {
@@ -137,5 +137,5 @@ function addtext(event) {
 }
 
 (function(){
-    addtext();
+    loadtext();
 })();
